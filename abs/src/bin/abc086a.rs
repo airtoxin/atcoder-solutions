@@ -1,5 +1,9 @@
 fn main() {
-    unimplemented!();
+    let line = read_vec::<i32>();
+    let a = line[0];
+    let b = line[1];
+
+    println!("{}", if a * b % 2 == 0 { "Even" } else { "Odd" });
 }
 
 pub fn read<T: std::str::FromStr>() -> T {
