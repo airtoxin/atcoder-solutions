@@ -1,5 +1,11 @@
 fn main() {
-    unimplemented!();
+    let a = read::<i32>();
+    let line = read_vec::<i32>();
+    let b = line[0];
+    let c = line[1];
+    let s = read::<String>();
+
+    println!("{} {}", a + b + c, s);
 }
 
 pub fn read<T: std::str::FromStr>() -> T {
