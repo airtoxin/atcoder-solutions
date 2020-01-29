@@ -1,5 +1,14 @@
 fn main() {
-    unimplemented!();
+    let _n = read::<i32>();
+    let mut a_vec = read_vec::<i32>();
+
+    let mut count = 0;
+    while a_vec.iter().all(|a| a % 2 == 0) {
+        count += 1;
+        a_vec = a_vec.iter().map(|a| a / 2).collect();
+    }
+
+    println!("{}", count);
 }
 
 pub fn read<T: std::str::FromStr>() -> T {
