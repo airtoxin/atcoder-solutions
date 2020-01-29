@@ -1,5 +1,20 @@
 fn main() {
-    unimplemented!();
+    let _n = read::<i32>();
+    let mut a_vec = read_vec::<i32>();
+    a_vec.sort();
+    a_vec.reverse();
+
+    let mut alice_points = 0;
+    let mut bob_points = 0;
+    for (i, a) in a_vec.iter().enumerate() {
+        if i % 2 == 0 {
+            alice_points += *a;
+        } else {
+            bob_points += *a;
+        }
+    }
+
+    println!("{}", alice_points - bob_points);
 }
 
 pub fn read<T: std::str::FromStr>() -> T {
