@@ -1,5 +1,20 @@
+//use regex::Regex;
+//
+//fn main() {
+//    let s = read::<String>();
+//    let re = Regex::new("^(dreamer|eraser|dream|erase)*$").unwrap();
+//
+//    println!("{}", if re.is_match(&s) { "YES" } else { "NO" });
+//}
+
 fn main() {
-    unimplemented!();
+    let mut s = read::<String>();
+    s = s.replace("eraser", "");
+    s = s.replace("erase", "");
+    s = s.replace("dreamer", "");
+    s = s.replace("dream", "");
+
+    println!("{}", if s.is_empty() { "YES" } else { "NO" });
 }
 
 pub fn read<T: std::str::FromStr>() -> T {

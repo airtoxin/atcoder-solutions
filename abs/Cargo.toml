@@ -1,4 +1,5 @@
 [dependencies]
+regex = "=1.3.3"
 
 [package]
 authors = ['airtoxin <airtoxin@icloud.com>']
