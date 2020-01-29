@@ -40,7 +40,10 @@ pub fn read<T: std::str::FromStr>() -> T {
 }
 
 pub fn read_vec<T: std::str::FromStr>() -> Vec<T> {
-    read::<String>().split_whitespace().map(|e| e.parse().ok().unwrap()).collect()
+    read::<String>()
+        .split_whitespace()
+        .map(|e| e.parse().ok().unwrap())
+        .collect()
 }
 
 pub fn read_vec2<T: std::str::FromStr>(n: u32) -> Vec<Vec<T>> {
