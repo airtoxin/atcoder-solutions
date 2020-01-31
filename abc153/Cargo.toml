@@ -1,0 +1,10 @@
+[dependencies]
+
+[package]
+authors = ['airtoxin <airtoxin@icloud.com>']
+edition = '2018'
+name = 'abc153'
+version = '0.1.0'
+[profile.release]
+lto = true
+panic = 'abort'
