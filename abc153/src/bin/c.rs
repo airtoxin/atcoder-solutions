@@ -1,5 +1,18 @@
 fn main() {
-    unimplemented!();
+    let line = read_vec::<i64>();
+    let _n = line[0];
+    let k = line[1];
+    let mut h_vec = read_vec::<i64>();
+
+    h_vec.sort();
+    h_vec.reverse();
+
+    let mut iter = h_vec.iter();
+    for _ in 0..k {
+        iter.next();
+    }
+
+    println!("{}", iter.sum::<i64>());
 }
 
 fn read<T: std::str::FromStr>() -> T {
@@ -10,19 +23,4 @@ fn read<T: std::str::FromStr>() -> T {
 
 fn read_vec<T: std::str::FromStr>() -> Vec<T> {
     read::<String>().split_whitespace().map(|e| e.parse().ok().unwrap()).collect()
-}
-
-fn read_vec2<T: std::str::FromStr>(n: u32) -> Vec<Vec<T>> {
-    (0..n).map(|_| read_vec()).collect()
-}
-
-fn sum_each_digit(mut n: i32) -> i32 {
-    let mut sum = 0;
-
-    while n != 0 {
-        sum += n % 10;
-        n = n / 10;
-    }
-
-    sum
 }

@@ -1,5 +1,9 @@
 fn main() {
-    unimplemented!();
+    let line = read_vec::<f32>();
+    let h = line[0];
+    let a = line[1];
+
+    print!("{}", (h / a).ceil());
 }
 
 fn read<T: std::str::FromStr>() -> T {

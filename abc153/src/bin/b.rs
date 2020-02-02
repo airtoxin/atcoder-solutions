@@ -1,5 +1,10 @@
 fn main() {
-    unimplemented!();
+    let line = read_vec::<i32>();
+    let h = line[0];
+    let _n = line[1];
+    let a_vec = read_vec::<i32>();
+
+    println!("{}", if h - a_vec.iter().sum::<i32>() > 0 {"No"} else {"Yes"});
 }
 
 fn read<T: std::str::FromStr>() -> T {
