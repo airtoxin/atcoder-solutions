@@ -1,5 +1,22 @@
+use std::i32::MAX;
+use std::cmp::min;
+
 fn main() {
-    unimplemented!();
+    let line = read_vec::<usize>();
+    let n = line[0];
+    let k = line[1];
+    let h_vec = read_vec::<i32>();
+    let mut costs = vec![MAX; n as usize];
+    costs[0] = 0;
+
+    for i in 1..n {
+        for ki in 1..k+1 {
+            if (i as i32) - (ki as i32) < 0 { continue; }
+            costs[i] = min(costs[i], costs[i - ki] + (h_vec[i] - h_vec[i - ki]).abs());
+        }
+    }
+
+    println!("{}", costs[costs.len() - 1]);
 }
 
 pub fn read<T: std::str::FromStr>() -> T {
